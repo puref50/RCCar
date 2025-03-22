@@ -198,11 +198,9 @@ class DataCollector:
             # 保存当前的转向数据
             #steering_value = (self.steering_ms_out - self.steering_ms_centered) / self.steering_ms_range
             steering_axis= self.steering_axis
-            steering_range = self.steering_ms_range
             self.steering_data.append({
                 "frame": frame_num,
                 "steering_axis": steering_axis,
-                "steering_range": steering_range,
                 "timestamp": datetime.now().isoformat()
             })
             
