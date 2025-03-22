@@ -197,14 +197,16 @@ class DataCollector:
             
             # 保存当前的转向数据
             #steering_value = (self.steering_ms_out - self.steering_ms_centered) / self.steering_ms_range
-            steering_value = self.steering_ms_out
+            steering_axis= self.steering_axis
+            steering_range = self.steering_ms_range
             self.steering_data.append({
                 "frame": frame_num,
-                "steering_value": steering_value,
+                "steering_axis": steering_axis,
+                "steering_range": steering_range,
                 "timestamp": datetime.now().isoformat()
             })
             
-            print(f"Saved frame {frame_num} with steering value {steering_value:.3f}")
+            print(f"Saved frame {frame_num}")
     
     def handle_one_shot_button(self, button_index):
         """检测按钮的一次性按下事件"""
